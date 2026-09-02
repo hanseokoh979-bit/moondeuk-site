@@ -65,7 +65,9 @@ h1 {
     text-wrap: balance;
 }
 
+/* 6항으로 바로 뛰는 링크가 있다 — 제목이 화면 맨 위에 딱 붙지 않게 띄운다. */
 h2 {
+    scroll-margin-top: 1.5rem;
     font-size: 1.15rem;
     letter-spacing: -0.02em;
     margin: 3rem 0 0.5rem;
@@ -110,6 +112,9 @@ td { color: var(--text-2); }
 .meta { color: var(--text-3); font-size: 0.9rem; }
 
 a { color: var(--text); text-decoration-color: var(--text-3); text-underline-offset: 3px; }
+
+/* 삭제 방법으로 가는 문. Play 가 「눈에 띄게 표시」를 요구해서 카드 바로 밑에 세운다. */
+.lead-link a { text-decoration-color: var(--text); }
 a:hover { text-decoration-color: var(--text); }
 
 footer {
