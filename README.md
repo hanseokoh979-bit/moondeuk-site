@@ -5,5 +5,6 @@
 
 - 홈페이지 — <https://hanseokoh979-bit.github.io/moondeuk-site/>
 - 개인정보처리방침 — <https://hanseokoh979-bit.github.io/moondeuk-site/privacy.html>
+- Google Play — <https://play.google.com/store/apps/details?id=kr.moondeuk.trip> (2026-10-02 출시)
 
 앱 소스는 별도 저장소에 있습니다. 이 저장소에는 공개 문서만 있습니다.

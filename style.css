@@ -113,6 +113,22 @@ td { color: var(--text-2); }
 
 a { color: var(--text); text-decoration-color: var(--text-3); text-underline-offset: 3px; }
 
+/*
+ * 스토어로 가는 문 (2026-10-02 출시). 앱의 기본 버튼처럼 검정 하나다 — 색은 장소에만 쓴다.
+ * 다크 모드에서는 글자색·바탕색을 맞바꿔 그대로 눈에 띈다.
+ */
+.store {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.8rem 1.4rem;
+    border-radius: 999px;
+    background: var(--text);
+    color: var(--bg);
+    font-weight: 600;
+    text-decoration: none;
+}
+.store:hover { opacity: 0.88; }
+
 /* 삭제 방법으로 가는 문. Play 가 「눈에 띄게 표시」를 요구해서 카드 바로 밑에 세운다. */
 .lead-link a { text-decoration-color: var(--text); }
 a:hover { text-decoration-color: var(--text); }
