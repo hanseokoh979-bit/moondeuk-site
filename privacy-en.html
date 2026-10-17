@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moondeuk Privacy Policy</title>
+<meta name="description" content="What Moondeuk reads, where it keeps it, and when anything leaves your device.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="mark" href="./"><span class="b">[</span>Moondeuk<span class="c">]</span></a>
+
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated: October 15, 2026 · <a href="privacy.html">한국어</a> · <a href="privacy-ja.html">日本語</a></p>
+
+  <p>Moondeuk reads the location stored in the photos in your gallery to build a travel map, and lets you add
+     songs to those trips. This page lists, without exception, <strong>what Moondeuk reads, where it keeps it,
+     and when anything leaves your device</strong>. If this English translation and the
+     <a href="privacy.html">Korean original</a> differ, the Korean original applies.</p>
+
+  <div class="card">
+    <p><strong>Moondeuk has no servers.</strong> The developer keeps none of your data.</p>
+    <p><strong>Your original photos never leave your device.</strong> They are not included in backups either. Only
+       <strong>when you share</strong> a ticket does one image newly drawn from that photo go to the app you choose — not
+       the original file, and not its location (section 3 ④).</p>
+    <p><strong>No ads or analytics tools.</strong> No data is passed to any third party.</p>
+    <p>Data leaves your device in <strong>exactly four cases</strong>, all listed in section 3 below.</p>
+  </div>
+
+  <p class="lead-link"><a href="#delete"><strong>Want to delete your data?</strong> Section 6 has a table of how
+     to delete it →</a></p>
+
+  <h2>1. What Moondeuk reads</h2>
+  <div class="scroll">
+  <table>
+    <tr><th>What</th><th>From</th><th>Why</th></tr>
+    <tr>
+      <td>Capture time, <strong>photo location (GPS)</strong>, file name and size</td>
+      <td>The EXIF data of photos in your gallery</td>
+      <td>To work out when and where you traveled and draw your map</td>
+    </tr>
+    <tr>
+      <td>Photo images</td>
+      <td>Your gallery</td>
+      <td>Read only <strong>to show them on screen</strong> and <strong>when you share a ticket</strong>. Apart from the shared image (section 3 ④), they are never copied or stored separately</td>
+    </tr>
+    <tr>
+      <td>Song titles and artists</td>
+      <td>What you type in, or the song that is playing</td>
+      <td>To add songs to your trips</td>
+    </tr>
+  </table>
+  </div>
+  <p><strong>Moondeuk never moves or deletes photos.</strong> It only reads them.</p>
+
+  <h2>2. Where your data is stored</h2>
+  <p><strong>By default, on this device.</strong> It is stored only in the app's internal storage, which other apps cannot read.</p>
+  <p><strong>Only if you turn on backup</strong>, one more copy of your travel records is stored in <strong>your own Google
+     Drive</strong>. It goes to the "app data folder", a hidden area reserved for the app, so it does not appear in your
+     Drive and other apps cannot read it. <strong>Neither can the developer.</strong></p>
+  <ul>
+    <li><strong>Included</strong> — trips, cities, and song links; reference keys used to find your photos again (values made
+        from capture time and coordinates); flags for hidden items; and your home area radius setting</li>
+    <li><strong>Not included</strong> — original photos</li>
+  </ul>
+
+  <h2>3. When data leaves your device — only four cases</h2>
+
+  <h3>① Finding place names (everyone)</h3>
+  <p>Coordinates alone don't say "Busan" or "Kyoto", so Moondeuk <strong>asks the Android operating system's location
+     service about representative coordinates.</strong></p>
+  <ul>
+    <li>It does not ask about each photo — <strong>only one or two representative coordinates per group of trip photos</strong></li>
+    <li>The coordinates of <strong>the places that Exclude home area in Settings identified around your home</strong> are also
+        asked about, once per place — to show you a <strong>neighborhood name</strong> such as "Sanggye-dong". A name, once
+        received, is kept on the device and not asked again</li>
+    <li>If you <strong>open "Is your home missing?"</strong> there, the coordinates of the places listed on that screen (places
+        where your photos piled up over several days) are also asked about — to show the places you can choose by
+        neighborhood name. These names are not kept, so <strong>they are asked again each time you open that screen</strong></li>
+    <li><strong>No photos are sent</strong></li>
+    <li>This is handled by Android, under Google's privacy policy</li>
+  </ul>
+
+  <h3>② Backup (only if you turn it on)</h3>
+  <p>The contents described in section 2 are sent to <strong>your own Google Drive</strong>. This <strong>includes the
+     coordinates of places you traveled.</strong> The app talks to Drive directly, never through a developer server.</p>
+  <p>Backups are <strong>not uploaded automatically.</strong> One is uploaded <strong>each time you tap</strong> in
+     Settings › Data › Backup — it is not a switch that keeps uploading once turned on.</p>
+
+  <h3>③ Going to listen to a song</h3>
+  <p>Tapping a song opens the music app you chose (Melon, YouTube Music, or Spotify). At that moment <strong>the song
+     title and artist are passed to that app as a search term.</strong> Moondeuk does not play music itself.</p>
+
+  <h3>④ Sharing a ticket (only when you tap it)</h3>
+  <p>When you tap <strong>Share</strong> on the ticket that appears when you tap a photo in the Globe tab, a
+     <strong>newly drawn ticket image</strong> made from that one photo is handed to Android's share sheet, and
+     <strong>the app you choose</strong> (a messenger, a social app, saving, and so on) receives it.</p>
+  <ul>
+    <li>What the image contains — the photo, the city and country names, the trip's route (names of cities visited) and dates, and the day the photo was taken</li>
+    <li><strong>No photo location (GPS) or other capture metadata from the original is included.</strong> It is a newly
+        drawn image, not the original file. The capture <strong>time</strong> is shown only to the day</li>
+    <li>Moondeuk does not send it anywhere itself. The receiving app is briefly given permission to read <strong>only that one image</strong></li>
+    <li>The image stays in the app's temporary folder for a while, and the next time you share, images <strong>more than a day
+        old</strong> are deleted. Android may also delete it first if your phone runs low on space</li>
+    <li>How the receiving app handles the image follows that app's policy</li>
+  </ul>
+
+  <div class="card">
+    <p><strong>Nothing other than these four leaves your device. Nothing is sent to a developer server under any
+       circumstances.</strong></p>
+  </div>
+
+  <h2>4. About notification access</h2>
+  <p>Moondeuk can use <strong>notification access</strong> for notifications like "You heard this song in Kyoto". The
+     permission has an alarming name, so here is clearly what it does and what it doesn't.</p>
+
+  <h3>What it does</h3>
+  <ul><li>Reads only the <strong>title and artist</strong> of the song currently playing</li></ul>
+
+  <h3>What it doesn't do</h3>
+  <ul>
+    <li><strong>It does not read a single character of notification text.</strong> The app's function for receiving notifications is empty</li>
+    <li>It <strong>keeps no list, times, or counts</strong> of what you listened to. What it reads is compared with the
+        songs you added, then discarded</li>
+    <li><strong>It sends nothing anywhere</strong></li>
+  </ul>
+  <p>The only things kept on the device are what <strong>you registered yourself by tapping on screen</strong> — a song's
+     spelling you confirmed with "Same as this song", and a song you added by tapping it under "Now playing".</p>
+  <p><strong>The app works normally without this permission.</strong> It is not requested on first launch, and you can
+     turn it off in Settings at any time.</p>
+
+  <h2>5. Third parties</h2>
+  <p><strong>None.</strong></p>
+  <ul>
+    <li>Moondeuk contains <strong>no advertising SDKs, analytics tools, or crash reporters</strong></li>
+    <li>Data is not sold or shared</li>
+    <li>Cases ①–④ in section 3 go to your device, your account, or apps you choose; the developer never receives
+        your data</li>
+  </ul>
+
+  <h2 id="delete">6. Retention and deletion</h2>
+  <p>Data on your device is kept until you delete it. <strong>The developer keeps no data, so there is nothing to
+     delete on the developer's side.</strong></p>
+  <div class="scroll">
+  <table>
+    <tr><th>What</th><th>How</th></tr>
+    <tr><td>All records in the app</td><td>Settings › Data › <strong>Delete all records</strong></td></tr>
+    <tr><td>Images made for sharing</td><td>Deleted at your next share once they are a day old. To delete them right away: System Settings → Apps → Moondeuk → Storage → <strong>Clear cache</strong></td></tr>
+    <tr><td>Your backup on Drive</td><td>Google Account → Data &amp; privacy → <strong>App data</strong></td></tr>
+    <tr><td>Photo access</td><td>System Settings → Apps → Moondeuk → Permissions</td></tr>
+    <tr><td>Notification access</td><td>System Settings → Notification access</td></tr>
+  </table>
+  </div>
+  <p><strong>Deleting the app also deletes the data on the device.</strong> Your backup on Drive must be deleted
+     separately as above.</p>
+  <p><strong>There is no retention period after deletion.</strong> The developer keeps no data at all, so once you delete
+     it, it is gone. A backup copy exists only in your own Drive, so deleting it leaves nothing behind.</p>
+
+  <h2>7. Permissions used</h2>
+  <div class="scroll">
+  <table>
+    <tr><th>Permission</th><th>Used for</th></tr>
+    <tr><td>Read photos and videos</td><td>Reading the capture metadata of photos in your gallery. <strong>Partial access (selected photos only) is supported too</strong></td></tr>
+    <tr><td>Access media location</td><td>Without it, Android hands over photos with the GPS tags removed from their EXIF</td></tr>
+    <tr><td>Internet</td><td>Used <strong>only for backup</strong></td></tr>
+    <tr><td>Show notifications</td><td>The "You heard this song in Kyoto" notification</td></tr>
+    <tr><td>Notification access</td><td>See section 4. <strong>Optional</strong></td></tr>
+  </table>
+  </div>
+
+  <h2>8. Children's privacy</h2>
+  <p>Moondeuk is <strong>not directed at children under 13.</strong> It does not knowingly collect personal information
+     from children.</p>
+
+  <h2>9. Changes to this policy</h2>
+  <p>When this policy changes, this page and its "Last updated" date are updated. If the way data is handled changes
+     significantly, this will also be announced in the app.</p>
+
+  <h2>10. Operator and contact</h2>
+  <ul>
+    <li>Operator — <strong>YEOUL</strong> (Representative: Hanseo Koh)</li>
+    <li>Business registration number — 491-40-01502</li>
+    <li>Privacy officer — Hanseo Koh</li>
+    <li>Contact — <a href="mailto:hanseokoh979@gmail.com">hanseokoh979@gmail.com</a></li>
+  </ul>
+
+  <footer><span class="meta">Moondeuk · Operated by YEOUL</span></footer>
+
+</div>
+</body>
+</html>

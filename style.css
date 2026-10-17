@@ -99,6 +99,8 @@ th, td {
 }
 th { color: var(--text-3); font-weight: 600; white-space: nowrap; }
 td { color: var(--text-2); }
+/* 일본어는 낱말 사이에 빈칸이 없어 아무 글자에서나 끊긴다 — 옆 칸이 길면 첫 칸이 두세 글자 폭으로 눌린다. */
+:lang(ja) td:first-child { min-width: 6.5em; }
 
 .card {
     background: var(--surface);
