@@ -13,7 +13,7 @@
   <a class="mark" href="./"><span class="b">[</span>Moondeuk<span class="c">]</span></a>
 
   <h1>Privacy Policy (iPhone)</h1>
-  <p class="meta">Last updated: November 6, 2026 · <a href="privacy-ios.html">한국어</a> · <a href="privacy-ios-ja.html">日本語</a></p>
+  <p class="meta">Last updated: November 7, 2026 · <a href="privacy-ios.html">한국어</a> · <a href="privacy-ios-ja.html">日本語</a></p>
 
   <p>Moondeuk reads where and when the photos in your library were taken to build a travel map, and makes a
      short vlog for each trip. This page lists, without exception, <strong>what Moondeuk for iPhone
@@ -25,8 +25,10 @@
     <p><strong>Your original photos never leave your device.</strong> They are not included in backups either. Only when
        <strong>you tap Share</strong> does a newly drawn image or video go to the app you choose — not the original file, and
        not its location (section 3 ④).</p>
+    <p><strong>Only when you post a ticket to a friends group</strong> does a newly drawn ticket image go to the people in that group, together with
+       <strong>the spot where the photo was taken</strong>. Before it is posted, you are shown that spot on a map and asked to confirm (section 3 ⑤).</p>
     <p><strong>No ads, no analytics, and no tracking.</strong> The app's data is not passed to any third party.</p>
-    <p>The app sends data off your device in <strong>four cases</strong>, all listed in section 3. None of them send anything to the developer.</p>
+    <p>The app sends data off your device in <strong>five cases</strong>, all listed in section 3. None of them send anything to the developer.</p>
   </div>
 
   <p class="lead-link"><a href="#delete"><strong>Want to delete your data?</strong> Section 8 lists how →</a></p>
@@ -59,6 +61,11 @@
       <td>What you type in</td>
       <td></td>
     </tr>
+    <tr>
+      <td>Names of people in your friends group</td>
+      <td>iCloud (if you are in a friends group)</td>
+      <td>To show who posted each ticket. These are the Apple Account names Apple shares with the people in the group. They are not stored; they are fetched when needed</td>
+    </tr>
   </table>
   </div>
   <ul>
@@ -88,13 +95,17 @@
      A vlog is made on the device the first time you open it and kept in <strong>a temporary folder (cache) on this device</strong> to be reused. iOS may clear it when storage runs low, and Delete All Records erases it.
      The list of photos you pick for a vlog and the list of photos you dim on the globe also stay on this device.
      Any video of you that an earlier version (1.3.7) copied into the app's own storage on this device for the first scene of a vlog is erased the first time you open a version without that feature.</p>
+  <p><strong>If you are in a friends group:</strong> tickets posted to the group (image, city, country, spot where the photo was taken, and time posted) are stored in
+     <strong>the iCloud of the person who created the group</strong> (in the space this app shares with the group, within its own area of iCloud) and use that person's iCloud storage.
+     The developer cannot read them. On this device, Moondeuk keeps the ticket images it receives in <strong>a temporary folder (cache)</strong> and records which of your photos you posted and the people you hid
+     in the app's own storage. None of these is included in Moondeuk backups, and both are erased by Delete All Records (the group and its tickets in iCloud remain — see section 8).</p>
   <p>To show <strong>Home Screen and Lock Screen widgets</strong>, Moondeuk keeps <strong>small, downsized copies of a few photos</strong> from the trips each day will show
      over the coming 30 days, along with the city name and trip dates and a globe image drawn by the app, in <strong>an app group container on this device</strong> (a place only
      Moondeuk and its widgets can read). <strong>Locked and hidden trips are not included.</strong> These are erased by Delete All Records and are not included in backups.</p>
   <p><strong>iPhone backups:</strong> if iCloud Backup or computer backups are on for your iPhone, the app's data on this device <strong>may be included in those iOS device backups.</strong>
      They are separate from Moondeuk's backup and are managed through your Apple Account and device settings. The developer cannot see them.</p>
 
-  <h2>3. When data leaves your device — four cases</h2>
+  <h2>3. When data leaves your device — five cases</h2>
 
   <h3>① Finding place names (everyone)</h3>
   <p>Coordinates alone don't say "Busan" or "Kyoto", so Moondeuk <strong>asks Apple's location service (geocoding) about representative coordinates.</strong></p>
@@ -136,7 +147,7 @@
   <ul>
     <li><strong>Ticket</strong> (shown when you tap a photo in the Globe tab) — the photo (with the filter applied, if you turned it on), the names of the city and country where it was taken (in English), the trip's dates and length, and the day the photo was taken</li>
     <li><strong>Vlog</strong> (from Vlog in trip details, or ▶ in city details) — photos from that trip or city, the moving part of Live Photos, videos, the city name (in English), and the city's place on a globe drawn by the app. No dates are shown and there is no sound</li>
-    <li><strong>Year in Review</strong> — by default <strong>without photos</strong>, only passport stamps and numbers. Only if you turn on Include Photos are up to four stamped photos included</li>
+    <li><strong>Year in Review</strong> — two images: a cover with eight photos from that year's trips, and a closing image with the year and up to six photos cut into country shapes</li>
   </ul>
   <p>For all three:</p>
   <ul>
@@ -144,7 +155,27 @@
     <li><strong>Photos, city names, and routes of locked trips are never included</strong></li>
     <li>Moondeuk does not send it anywhere itself or keep a copy. How the receiving app handles it follows that app's policy</li>
   </ul>
-  <div class="card"><p><strong>These four are all the app sends.</strong> The only thing that reaches the developer is what you choose to send when you contact us (section 11).</p></div>
+  <h3>⑤ Friends groups (only if you create or join one)</h3>
+  <p>In the Friends tab you can create a group and send an invite link, or join a group through a link a friend sent you, and then share travel tickets with the people in it.
+     Groups work through <strong>Apple's iCloud sharing</strong>. Nothing passes through a developer server, and <strong>the developer cannot see the contents.</strong> Everyone in a group must be signed in to iCloud.</p>
+  <ul>
+    <li><strong>Tickets are never posted automatically.</strong> A ticket is posted, one at a time, only when you tap Share with Friends on the ticket screen, check the spot on the map, and tap Share This Location</li>
+    <li>What is posted — <strong>one ticket image</strong> newly drawn on the device (the photo, the city and country names in English, the trip's dates and length, and the day the photo was taken),
+        <strong>the city name and country</strong>, <strong>the coordinates of the spot where the photo was taken</strong> (the city's representative coordinates if the photo has no location), and the time it was posted</li>
+    <li><strong>The spot is sent as exact coordinates.</strong> People in the group can look at it closely on a satellite map. We recommend not posting photos taken near your home or where you are staying</li>
+    <li><strong>Your original photo and its original metadata are not sent</strong> — the image file is newly drawn, so it carries no photo location or device information (the coordinates are sent separately, as above)</li>
+    <li><strong>Only people invited into that group can see it.</strong> The person who created the group can invite and remove people, up to 100 per group. People in the group can see each other's
+        Apple Account names, and Apple's sharing window shows information about the people in the group as Apple determines</li>
+    <li>Tickets are stored in <strong>the iCloud of the person who created the group</strong> (section 2). Invite links are sent through the app you choose (Messages, Mail, and so on)</li>
+    <li><strong>When you take a ticket down, it is removed from the group right away.</strong> If you leave a group, your tickets are taken down too, and if the creator deletes the group, the group and all its tickets are deleted.
+        However, we cannot stop someone in the group who has already seen it from taking a screenshot</li>
+    <li><strong>Photos from locked or hidden trips cannot be posted</strong> (they do not appear in the Globe tab)</li>
+    <li>If you tap <strong>Report</strong> on a friend's ticket, your mail app opens with a message to the developer containing that ticket's city, country, poster's name, and ticket ID
+        (it reaches the developer only if you send it — section 11; the ticket image and the spot are not included). <strong>Hide This Person's Tickets</strong> is recorded only on this device, and the person is not notified</li>
+    <li>This processing is done by Apple and is governed by Apple's privacy policy</li>
+  </ul>
+
+  <div class="card"><p><strong>These five are all the app sends.</strong> The only thing that reaches the developer is what you choose to send when you contact us (section 11).</p></div>
 
   <h2>4. Purchases</h2>
   <p>Moondeuk Premium (monthly and yearly subscriptions, and Lifetime) is <strong>paid through the App Store and processed by Apple.</strong></p>
@@ -170,7 +201,7 @@
   <ul>
     <li><strong>iOS performs the check.</strong> The app only learns "passed / not passed" and <strong>cannot access face or fingerprint data</strong></li>
     <li>Moondeuk <strong>never creates or stores a separate password</strong> — with no stored secret, there is nothing to leak</li>
-    <li>A locked trip leaves only a lock placeholder on Home, with no photo or name, and does not appear on the Globe or in notifications, widgets, share images, vlogs, or counts</li>
+    <li>A locked trip leaves only a lock placeholder on Home, with no photo or name, and does not appear on the Globe or in notifications, widgets, share images, vlogs, friends groups, or counts</li>
   </ul>
 
   <h2>7. Third parties</h2>
@@ -178,7 +209,8 @@
   <ul>
     <li>Moondeuk contains <strong>no advertising SDKs, analytics tools, or crash reporters</strong>, and does <strong>not track</strong> you across other apps or websites</li>
     <li>Data is not sold or shared</li>
-    <li>Cases ①–④ in section 3 go to Apple's services, your own iCloud, or apps you choose; the developer never receives your data. Apple's servers may be located outside your country</li>
+    <li>Cases ①–⑤ in section 3 go to Apple's services, your own iCloud, apps you choose, or friends groups you choose; the developer never receives your data. Apple's servers may be located outside your country</li>
+    <li>Tickets and spots you post to a friends group are seen by <strong>the people in the group you invited or were invited to</strong>. This is sharing you choose, one ticket at a time; it is not provided by the developer</li>
     <li>Messages sent to our contact email are received through Google's Gmail (section 11)</li>
     <li>If you turned on "Share With App Developers" in Settings › Privacy &amp; Security › Analytics &amp; Improvements, <strong>Apple</strong> may pass crash logs to the developer.
         These contain no photos or travel records, and nothing is passed if you turn it off</li>
@@ -189,7 +221,9 @@
   <div class="scroll">
   <table>
     <tr><th>What</th><th>How</th></tr>
-    <tr><td>All records in the app</td><td>Me › Data › <strong>Delete All Records</strong> — trips, cities, stickers, vlogs, widget copies, and scheduled notifications. From version 1.3.2, also places you marked "Not Home" or added as home, and notifications you already received. Settings such as your home area radius and photos you saved to your library remain</td></tr>
+    <tr><td>All records in the app</td><td>Me › Data › <strong>Delete All Records</strong> — trips, cities, stickers, vlogs, widget copies, scheduled notifications, ticket images received from friends, and the list of people you hid. From version 1.3.2, also places you marked "Not Home" or added as home, and notifications you already received. Settings such as your home area radius, photos you saved to your library, and <strong>friends groups and posted tickets in iCloud</strong> remain</td></tr>
+    <tr><td>Tickets you posted to a friends group</td><td>Tap "Shared with Friends" on the ticket screen and <strong>Take Down</strong>, or open the ticket in the Friends tab and <strong>Take Down</strong> — it is removed from the group right away</td></tr>
+    <tr><td>Friends group</td><td>Friends tab › top right › <strong>Leave Group</strong> (your tickets are taken down too). If you created the group, <strong>Delete Group</strong> (the group and its tickets are deleted for everyone in it)</td></tr>
     <tr><td>Your iCloud backup</td><td>Settings › Apple Account › iCloud › Manage Account Storage › Moondeuk › <strong>Delete Data</strong></td></tr>
     <tr><td>Photo access</td><td>Settings › Apps › Moondeuk › Photos</td></tr>
     <tr><td>Notifications</td><td>Settings › Apps › Moondeuk › Notifications</td></tr>
@@ -197,7 +231,7 @@
     <tr><td>Contact emails</td><td>Section 11</td></tr>
   </table>
   </div>
-  <p><strong>Deleting the app also deletes the data on the device.</strong> Your iCloud backup must be deleted separately as above.</p>
+  <p><strong>Deleting the app also deletes the data on the device.</strong> Your iCloud backup and friends groups must be deleted separately as above.</p>
   <p><strong>Once deleted, the app's records are not kept on the developer's side.</strong> A Moondeuk backup copy exists only in your own iCloud, so you can delete it as above.
      Copies in an iPhone device backup (section 2) disappear when that backup is deleted or replaced by a newer one.</p>
 
@@ -217,6 +251,7 @@
   <h2>10. Children's privacy</h2>
   <p>Anyone can use Moondeuk, with no age limit (App Store age rating: 4+). The app's records stay on the device and do not reach the developer.</p>
   <p>The developer <strong>does not knowingly collect personal information from children under 14.</strong> If you are under 14, please contact us together with a parent or guardian.</p>
+  <p>Friends groups include the spot where each photo was taken (section 3 ⑤). <strong>If you are under 14, please use friends groups together with a parent or guardian.</strong></p>
 
   <h2>11. Information received when you contact us</h2>
   <p>If you don't contact us, the developer receives no information about you.</p>
