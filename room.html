@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+  문득 친구 방 초대 페이지(2026-11-14). 앱이 보내는 초대 링크가 이 주소다 — https://hanseokoh979-bit.github.io/moondeuk-site/room.html#<방 번호>.<방 열쇠>
+  카카오톡 · 메시지에서 웹 주소는 눌리는데 앱 주소(moondeuk://)는 안 눌려서 둔다. # 뒤(방 열쇠)는 브라우저가 서버로 보내지 않는다 — 이 페이지는 그것을
+  브라우저 안에서 읽어 「문득에서 열기」 단추를 moondeuk://room/<방 번호>#<방 열쇠> 로 만들 뿐이다. 밖에서 불러오는 스크립트 · 분석 도구 · 쿠키가 없다(그래야 열쇠가 새지 않는다).
+  저절로 앱으로 넘기지 않는다 — 앱이 없으면 Safari 가 「주소가 유효하지 않음」 창을 띄운다. 친구 방이 앱스토어 판에서 열리면 TEST_ONLY 를 false 로.
+-->
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>문득 친구 방 초대</title>
+<meta name="description" content="같이 여행 간 친구가 문득 친구 방에 초대했어요. 그 여행에서 마음에 든 사진을 서로 채워요.">
+<meta property="og:title" content="문득 친구 방 초대">
+<meta property="og:description" content="같이 여행 간 친구가 초대했어요. 그 여행에서 마음에 든 사진을 서로 채워요.">
+<meta property="og:image" content="https://hanseokoh979-bit.github.io/moondeuk-site/room-og.png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="style.css">
+<style>
+  .open { font-size: 1.05rem; padding: 0.9rem 1.6rem; margin-top: 1.25rem; }
+  .open[hidden], #bad[hidden], #good[hidden] { display: none; }
+  .icon { width: 72px; height: 72px; border-radius: 16px; display: block; margin: 2.5rem 0 0; }
+  .icon + h1 { margin-top: 1.25rem; }
+  .small { font-size: 0.9rem; color: var(--text-3); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="mark" href="./"><span class="b">[</span>문득<span class="c">]</span></a>
+
+  <img class="icon" src="room-og.png" alt="" width="72" height="72">
+  <h1 id="title">문득 친구 방에 초대받았어요</h1>
+
+  <div id="good">
+    <p id="lead">같이 여행 간 친구가 그 여행에서 마음에 든 사진을 서로 채우는 방에 초대했어요.</p>
+    <a class="store open" id="open" href="#" hidden>문득에서 열기</a>
+  </div>
+  <p id="bad" hidden>초대 링크가 잘못됐어요. 친구에게 링크를 다시 받아 주세요.</p>
+
+  <div class="card">
+    <p id="noapp"><strong>문득이 없나요?</strong> 친구 방은 지금 시험판에서만 열려 있어요. 초대한 친구에게 TestFlight 시험판 초대를 부탁해 주세요.</p>
+    <p id="kakao"><strong>카카오톡에서 단추가 안 눌리면</strong> 화면의 ⋯ 메뉴에서 「Safari로 열기」를 누른 뒤 다시 눌러 주세요.</p>
+  </div>
+
+  <p class="small" id="note">초대 열쇠는 주소의 # 뒤에만 있어 이 페이지의 서버로 가지 않아요. 링크를 가진 사람은 누구나 방에 들어올 수 있으니 같이 간 사람에게만 보내 주세요.</p>
+
+  <footer><span class="meta">문득 · Moondeuk · 운영 여울 · <a href="privacy-ios.html" id="privacy">개인정보처리방침</a></span></footer>
+
+</div>
+<script>
+(function () {
+  var TEST_ONLY = true; // 친구 방이 앱스토어 판에서도 열리면 false — 「문득이 없나요?」를 App Store 로
+
+  var text = {
+    ko: {
+      title: "문득 친구 방에 초대받았어요",
+      lead: "같이 여행 간 친구가 그 여행에서 마음에 든 사진을 서로 채우는 방에 초대했어요.",
+      open: "문득에서 열기",
+      bad: "초대 링크가 잘못됐어요. 친구에게 링크를 다시 받아 주세요.",
+      noapp: "<strong>문득이 없나요?</strong> 친구 방은 지금 시험판에서만 열려 있어요. 초대한 친구에게 TestFlight 시험판 초대를 부탁해 주세요.",
+      noappStore: "<strong>문득이 없나요?</strong> <a href=\"https://apps.apple.com/app/id6821060159\">App Store에서 받은 뒤</a> 이 링크를 다시 눌러 주세요.",
+      kakao: "<strong>카카오톡에서 단추가 안 눌리면</strong> 화면의 ⋯ 메뉴에서 「Safari로 열기」를 누른 뒤 다시 눌러 주세요.",
+      note: "초대 열쇠는 주소의 # 뒤에만 있어 이 페이지의 서버로 가지 않아요. 링크를 가진 사람은 누구나 방에 들어올 수 있으니 같이 간 사람에게만 보내 주세요.",
+      privacy: "개인정보처리방침", privacyHref: "privacy-ios.html", doc: "문득 친구 방 초대"
+    },
+    en: {
+      title: "You're invited to a Moondeuk friend room",
+      lead: "A friend you traveled with invited you to a room where you add the photos you liked from that trip for each other.",
+      open: "Open in Moondeuk",
+      bad: "This invite link isn't valid. Please ask your friend to send it again.",
+      noapp: "<strong>Don't have Moondeuk?</strong> Friend rooms are currently open only in the test version. Ask the friend who invited you to invite you to the TestFlight test version.",
+      noappStore: "<strong>Don't have Moondeuk?</strong> <a href=\"https://apps.apple.com/app/id6821060159\">Get it on the App Store</a>, then tap this link again.",
+      kakao: "<strong>If the button doesn't work in KakaoTalk,</strong> tap Open in Safari in the ⋯ menu, then tap it again.",
+      note: "The invite key is only in the part of the address after #, so it is never sent to this page's server. Anyone with the link can join the room, so please send it only to the people you traveled with.",
+      privacy: "Privacy Policy", privacyHref: "privacy-ios-en.html", doc: "Moondeuk friend room invite"
+    },
+    ja: {
+      title: "Moondeuk 友だちのルームに招待されました",
+      lead: "一緒に旅をした友だちが、その旅で気に入った写真をお互いに追加するルームに招待しました。",
+      open: "Moondeukで開く",
+      bad: "招待リンクが正しくありません。友だちにリンクをもう一度送ってもらってください。",
+      noapp: "<strong>Moondeukをお持ちでないですか？</strong>友だちのルームは、いまはテスト版でだけ開いています。招待した友だちに、TestFlightのテスト版への招待を頼んでください。",
+      noappStore: "<strong>Moondeukをお持ちでないですか？</strong><a href=\"https://apps.apple.com/app/id6821060159\">App Storeで入手</a>してから、このリンクをもう一度タップしてください。",
+      kakao: "<strong>カカオトークでボタンが押せないときは</strong>、画面の⋯メニューで「Safariで開く」をタップしてから、もう一度タップしてください。",
+      note: "招待の鍵はアドレスの#のあとにだけあり、このページのサーバーには送られません。リンクを持っている人は誰でもルームに入れるので、一緒に旅をした人にだけ送ってください。",
+      privacy: "プライバシーポリシー", privacyHref: "privacy-ios-ja.html", doc: "Moondeuk 友だちのルームへの招待"
+    }
+  };
+
+  var lang = (navigator.language || "ko").toLowerCase();
+  var t = lang.indexOf("ko") === 0 ? text.ko : lang.indexOf("ja") === 0 ? text.ja : text.en;
+  document.documentElement.lang = t === text.ko ? "ko" : t === text.ja ? "ja" : "en";
+  document.title = t.doc;
+  function set(id, html) { document.getElementById(id).innerHTML = html; }
+  set("title", t.title);
+  set("lead", t.lead);
+  set("open", t.open);
+  set("bad", t.bad);
+  set("noapp", TEST_ONLY ? t.noapp : t.noappStore);
+  set("kakao", t.kakao);
+  set("note", t.note);
+  var privacy = document.getElementById("privacy");
+  privacy.textContent = t.privacy;
+  privacy.href = t.privacyHref;
+
+  // #<방 번호>.<방 열쇠> — 둘 다 base64url(방 번호 16바이트 · 열쇠 32바이트 = 43자)
+  var m = location.hash.slice(1).match(/^([A-Za-z0-9_-]{16,64})\.([A-Za-z0-9_-]{43})$/);
+  var open = document.getElementById("open");
+  if (m) {
+    open.href = "moondeuk://room/" + m[1] + "#" + m[2];
+    open.hidden = false;
+  } else {
+    document.getElementById("good").hidden = true;
+    document.getElementById("bad").hidden = false;
+  }
+})();
+</script>
+</body>
+</html>
