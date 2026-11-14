@@ -13,7 +13,7 @@
   <a class="mark" href="./"><span class="b">[</span>Moondeuk<span class="c">]</span></a>
 
   <h1>Privacy Policy (iPhone)</h1>
-  <p class="meta">Last updated: November 7, 2026 · <a href="privacy-ios.html">한국어</a> · <a href="privacy-ios-ja.html">日本語</a></p>
+  <p class="meta">Last updated: November 14, 2026 · <a href="privacy-ios.html">한국어</a> · <a href="privacy-ios-ja.html">日本語</a></p>
 
   <p>Moondeuk reads where and when the photos in your library were taken to build a travel map, and makes a
      short vlog for each trip. This page lists, without exception, <strong>what Moondeuk for iPhone
@@ -21,14 +21,13 @@
      <a href="privacy-ios.html">Korean original</a> differ, the Korean original applies.</p>
 
   <div class="card">
-    <p><strong>Moondeuk has no servers.</strong> The developer neither receives nor keeps the travel records made in the app. There are no accounts to sign up for. The only thing the developer receives is what you choose to send when you contact us (section 11).</p>
-    <p><strong>Your original photos never leave your device.</strong> They are not included in backups either. Only when
-       <strong>you tap Share</strong> does a newly drawn image or video go to the app you choose — not the original file, and
-       not its location (section 3 ④).</p>
-    <p><strong>Only when you post a ticket to a friends group</strong> does a newly drawn ticket image go to the people in that group, together with
-       <strong>the spot where the photo was taken</strong>. Before it is posted, you are shown that spot on a map and asked to confirm (section 3 ⑤).</p>
-    <p><strong>No ads, no analytics, and no tracking.</strong> The app's data is not passed to any third party.</p>
-    <p>The app sends data off your device in <strong>five cases</strong>, all listed in section 3. None of them send anything to the developer.</p>
+    <p><strong>Your travel records stay on this device.</strong> The developer neither receives nor keeps the travel records made in the app. There are no accounts to sign up for.</p>
+    <p><strong>Only when you use friend rooms</strong> are the photos you pick and the captions you write stored on <strong>a server run by Yeoul</strong>. Photos, captions, room names, and your display name are
+       <strong>locked with the room key on this device before they are sent, so the server and the developer cannot open them.</strong> The key exists only in the invite link. <strong>Photo locations are not sent</strong> (section 3 ⑤).</p>
+    <p><strong>Your original photo files never leave your device.</strong> They are not included in backups either. When you share or post to a friend room,
+       <strong>a newly drawn copy</strong> is sent instead of the original, with no photo location or device information (section 3 ④ and ⑤).</p>
+    <p><strong>No ads, no analytics, and no tracking.</strong> The app's data is not sold or used for advertising.</p>
+    <p>The app sends data off your device in <strong>five cases</strong>, all listed in section 3.</p>
   </div>
 
   <p class="lead-link"><a href="#delete"><strong>Want to delete your data?</strong> Section 8 lists how →</a></p>
@@ -62,15 +61,21 @@
       <td></td>
     </tr>
     <tr>
-      <td>Names of people in your friends group</td>
-      <td>iCloud (if you are in a friends group)</td>
-      <td>To show who posted each ticket. These are the Apple Account names Apple shares with the people in the group. They are not stored; they are fetched when needed</td>
+      <td>Your display name, room names, and the short captions you add to photos in friend rooms</td>
+      <td>What you type in (if you use friend rooms)</td>
+      <td>To show the people in the room who posted each photo and what it is about. They are locked before being sent to the server (section 3 ⑤)</td>
+    </tr>
+    <tr>
+      <td>Photos, captions, and names posted to a friend room</td>
+      <td>The friend room server (if you are in a room)</td>
+      <td>To show the photos the people in the room added. They are unlocked on this device with the room key after they arrive</td>
     </tr>
   </table>
   </div>
   <ul>
     <li><strong>Moondeuk never moves, deletes, or changes your photos.</strong> The only things it adds to your library are <strong>one ticket image when you tap Save Ticket under a ticket on Home</strong>,
-        <strong>one new photo when you tap Save to Photos in a ticket's filter</strong>, and <strong>one new video when you tap Save on a vlog</strong> — the originals stay as they are,
+        <strong>one new photo when you tap Save to Photos in a ticket's filter</strong>, <strong>one new video when you tap Save on a vlog</strong>, and
+        <strong>one photo when you open a photo in a friend room and tap Save</strong> — the originals stay as they are,
         and new photos and videos <strong>do not include a location</strong> (for Filter Photos, only the date taken is kept the same as the original; ticket images are newly drawn by Moondeuk on this device).</li>
     <li><strong>Moondeuk does not ask for your device's location (GPS).</strong> It only reads the location already stored in your photos.</li>
     <li><strong>Moondeuk does not read other apps' notifications or the music they are playing.</strong> Adding songs, which earlier versions had (importing a song from
@@ -94,10 +99,10 @@
      A vlog is made on the device the first time you open it and kept in <strong>a temporary folder (cache) on this device</strong> to be reused. iOS may clear it when storage runs low, and Delete All Records erases it.
      The list of photos you pick for a vlog and the list of photos you dim on the globe also stay on this device.
      Any video of you that an earlier version (1.3.7) copied into the app's own storage on this device for the first scene of a vlog is erased the first time you open a version without that feature.</p>
-  <p><strong>If you are in a friends group:</strong> tickets posted to the group (image, city, country, spot where the photo was taken, and time posted) are stored in
-     <strong>the iCloud of the person who created the group</strong> (in the space this app shares with the group, within its own area of iCloud) and use that person's iCloud storage.
-     The developer cannot read them. On this device, Moondeuk keeps the ticket images it receives in <strong>a temporary folder (cache)</strong> and records which of your photos you posted and the people you hid
-     in the app's own storage. None of these is included in Moondeuk backups, and both are erased by Delete All Records (the group and its tickets in iCloud remain — see section 8).</p>
+  <p><strong>If you use friend rooms:</strong> photos and captions posted to a room are stored <strong>in locked form</strong> on <strong>the friend room server run by Yeoul</strong> (Microsoft Azure, Seoul, South Korea) (section 3 ⑤).
+     On this device, Moondeuk keeps <strong>the room keys</strong> for the rooms you are in and <strong>an anonymous number and secret value</strong> identifying this device in the iOS Keychain (a this-device-only item),
+     the room photos it receives and unlocks in <strong>a temporary folder (cache)</strong>, and the list of people you hid and your display name in the app's own storage. None of these is included in Moondeuk backups.
+     Delete All Room Data (top right of the Friends tab) or Delete All Records erases them, together with your photos on the server (section 8).</p>
   <p>To show <strong>Home Screen and Lock Screen widgets</strong>, Moondeuk keeps <strong>small, downsized copies of a few photos</strong> from the trips each day will show
      over the coming 30 days, along with the city name and trip dates and a globe image drawn by the app, in <strong>an app group container on this device</strong> (a place only
      Moondeuk and its widgets can read). <strong>Locked and hidden trips are not included.</strong> These are erased by Delete All Records and are not included in backups.</p>
@@ -153,27 +158,35 @@
     <li><strong>Photos, city names, and routes of locked trips are never included</strong></li>
     <li>Moondeuk does not send it anywhere itself or keep a copy. How the receiving app handles it follows that app's policy</li>
   </ul>
-  <h3>⑤ Friends groups (only if you create or join one)</h3>
-  <p>In the Friends tab you can create a group and send an invite link, or join a group through a link a friend sent you, and then share travel tickets with the people in it.
-     Groups work through <strong>Apple's iCloud sharing</strong>. Nothing passes through a developer server, and <strong>the developer cannot see the contents.</strong> Everyone in a group must be signed in to iCloud.</p>
+  <h3>⑤ Friend rooms (only if you create or join one)</h3>
+  <p>In the Friends tab you can create a <strong>room</strong> with friends you traveled with and send an invite link, or join a room through a link a friend sent you, and then add the photos you liked from that trip for each other.
+     Rooms go through <strong>a server run by Yeoul</strong> (Microsoft Azure cloud, <strong>Seoul, South Korea</strong> region). There are no accounts; the first time you use rooms, this device creates
+     <strong>an anonymous number</strong> for itself. The Friends tab is currently open <strong>only in test builds (TestFlight)</strong>.</p>
   <ul>
-    <li><strong>Tickets are never posted automatically.</strong> A ticket is posted, one at a time, only when you tap Share with Friends on the screen that opens when you tap a photo in the Globe tab, check the spot on the map, and tap Share This Location</li>
-    <li>What is posted — <strong>one ticket image</strong> newly drawn on the device (the photo, the city and country names in English, the trip's dates and length, and the day the photo was taken),
-        <strong>the city name and country</strong>, <strong>the coordinates of the spot where the photo was taken</strong> (the city's representative coordinates if the photo has no location), and the time it was posted</li>
-    <li><strong>The spot is sent as exact coordinates.</strong> People in the group can look at it closely on a satellite map. We recommend not posting photos taken near your home or where you are staying</li>
-    <li><strong>Your original photo and its original metadata are not sent</strong> — the image file is newly drawn, so it carries no photo location or device information (the coordinates are sent separately, as above)</li>
-    <li><strong>Only people invited into that group can see it.</strong> The person who created the group can invite and remove people, up to 100 per group. People in the group can see each other's
-        Apple Account names, and Apple's sharing window shows information about the people in the group as Apple determines</li>
-    <li>Tickets are stored in <strong>the iCloud of the person who created the group</strong> (section 2). Invite links are sent through the app you choose (Messages, Mail, and so on)</li>
-    <li><strong>When you take a ticket down, it is removed from the group right away.</strong> If you leave a group, your tickets are taken down too, and if the creator deletes the group, the group and all its tickets are deleted.
-        However, we cannot stop someone in the group who has already seen it from taking a screenshot</li>
-    <li><strong>Photos from locked or hidden trips cannot be posted</strong> (they do not appear in the Globe tab)</li>
-    <li>If you tap <strong>Report</strong> on a friend's ticket, your mail app opens with a message to the developer containing that ticket's city, country, poster's name, and ticket ID
-        (it reaches the developer only if you send it — section 11; the ticket image and the spot are not included). <strong>Hide This Person's Tickets</strong> is recorded only on this device, and the person is not notified</li>
-    <li>This processing is done by Apple and is governed by Apple's privacy policy</li>
+    <li><strong>Photos are never posted automatically.</strong> Photos are posted only when you tap Add Photos in a room, pick photos, and tap Post</li>
+    <li><strong>Everything is locked before it is sent.</strong> Each room has a <strong>room key</strong> (AES-256) created on the device, and the items below are locked with it before they are sent. The key exists
+        <strong>only after the <code>#</code> in the invite link</strong> and is never sent to the server, so <strong>the server and the developer cannot open the locked contents</strong>
+      <ul>
+        <li>The photos you pick, <strong>redrawn as JPEGs with a long side of 1600 px (2560 px with Premium)</strong> — not the original files, and <strong>with no photo location or device information</strong></li>
+        <li>The <strong>short caption</strong> you add (up to 150 characters), and the photo's <strong>capture time</strong> and aspect ratio</li>
+        <li>The <strong>room name</strong> and the <strong>display name</strong> shown to the people in the room</li>
+      </ul>
+    </li>
+    <li><strong>Not sent: photo locations (coordinates), city names, travel records, or any other photos in your library.</strong> The year sections in a room and the city name in its vlog are added by each person's device from its own records.
+        The scenery in a photo may still reveal a place, so we recommend not posting photos that show your home or where you are staying</li>
+    <li><strong>What the server can see</strong> (not locked) — this device's anonymous number and a hash of its secret value, the room number and a hash of the room access value, which device is in which room, which device posted which photo and when,
+        the size of the locked files, how many photos were posted each day (to enforce limits), and the <strong>IP address</strong> used to connect (it may remain in cloud logs). No name, contact details, or Apple Account is collected</li>
+    <li><strong>Only people with the invite link can see the room.</strong> The link is the room key, so please send it <strong>only to the people you traveled with</strong>. The link is sent through the app you choose (Messages, KakaoTalk, and so on),
+        and how that app handles it follows that app's policy. Anyone the link is passed on to can also join</li>
+    <li>People in a room see each other's <strong>display names</strong> and posted photos and captions. They can open a photo and <strong>save it to their own library</strong>, and we cannot stop someone from taking a screenshot</li>
+    <li><strong>When you take a photo down, it is deleted from the server right away.</strong> If you leave a room, the photos you posted are deleted too, and when no one is left in a room, the whole room is deleted.
+        You can <strong>Hide</strong> a friend's photos on this device only (the person is not notified)</li>
+    <li><strong>Deleted items stay on the server in locked form so accidental deletions can be recovered, and are permanently deleted within two months of deletion</strong> (30 days as a previous version, then 30 days in the recycle bin). They remain locked during that time, so the server and the developer cannot open them</li>
+    <li>Limits — 3 MB per photo, 500 photos and 20 people per room, 30 photos (200 with Premium) per person per room, and 60 photos and 30 rooms per device per day</li>
+    <li>Running the server is entrusted to Microsoft (section 7). The app talks to the server only over an encrypted connection (HTTPS)</li>
   </ul>
 
-  <div class="card"><p><strong>These five are all the app sends.</strong> The only thing that reaches the developer is what you choose to send when you contact us (section 11).</p></div>
+  <div class="card"><p><strong>These five are all the app sends.</strong> The only things stored on the developer's side are the locked photos and captions in friend rooms, the information listed in ⑤, and what you choose to send when you contact us (section 11).</p></div>
 
   <h2>4. Purchases</h2>
   <p>Moondeuk Premium (monthly and yearly subscriptions, and Lifetime) is <strong>paid through the App Store and processed by Apple.</strong></p>
@@ -199,29 +212,33 @@
   <ul>
     <li><strong>iOS performs the check.</strong> The app only learns "passed / not passed" and <strong>cannot access face or fingerprint data</strong></li>
     <li>Moondeuk <strong>never creates or stores a separate password</strong> — with no stored secret, there is nothing to leak</li>
-    <li>A locked trip leaves only a lock placeholder on Home, with no photo or name, and does not appear on the Globe or in notifications, widgets, share images, vlogs, friends groups, or counts</li>
+    <li>A locked trip leaves only a lock placeholder on Home, with no photo or name, and does not appear on the Globe or in notifications, widgets, share images, vlogs, or counts</li>
   </ul>
 
-  <h2>7. Third parties</h2>
-  <p><strong>None.</strong></p>
+  <h2>7. Third parties and outsourced processing</h2>
+  <p><strong>Data is not provided to third parties.</strong></p>
   <ul>
     <li>Moondeuk contains <strong>no advertising SDKs, analytics tools, or crash reporters</strong>, and does <strong>not track</strong> you across other apps or websites</li>
     <li>Data is not sold or shared</li>
-    <li>Cases ①–⑤ in section 3 go to Apple's services, your own iCloud, apps you choose, or friends groups you choose; the developer never receives your data. Apple's servers may be located outside your country</li>
-    <li>Tickets and spots you post to a friends group are seen by <strong>the people in the group you invited or were invited to</strong>. This is sharing you choose, one ticket at a time; it is not provided by the developer</li>
+    <li>Cases ①–④ in section 3 go to Apple's services, your own iCloud, or apps you choose; the developer never receives your data. Apple's servers may be located outside your country</li>
+    <li>Photos and captions you post to a friend room are seen by <strong>the people in the room you invited or were invited to</strong>. This is sharing you choose, one photo at a time; it is not provided by the developer</li>
     <li>Messages sent to our contact email are received through Google's Gmail (section 11)</li>
     <li>If you turned on "Share With App Developers" in Settings › Privacy &amp; Security › Analytics &amp; Improvements, <strong>Apple</strong> may pass crash logs to the developer.
         These contain no photos or travel records, and nothing is passed if you turn it off</li>
   </ul>
+  <p><strong>Outsourced processing</strong> — Running and storing the friend room server is entrusted to <strong>Microsoft (Microsoft Azure cloud)</strong>. The work entrusted is running the server and storing locked files,
+     and the storage location is <strong>South Korea (Seoul region)</strong>. Photos, captions, and names are entrusted in locked form, so Microsoft cannot open them either. When you delete rooms or records, they are deleted as described in section 3 ⑤.</p>
 
   <h2 id="delete">8. Retention and deletion</h2>
-  <p>Data on your device is kept until you delete it. <strong>The app's records never reach the developer, so there is nothing to delete on the developer's side.</strong> Contact emails follow section 11.</p>
+  <p>Data on your device is kept until you delete it. <strong>Travel records never reach the developer, so there is nothing to delete on the developer's side.</strong> What is on the friend room server is kept until you take it down, leave the room,
+     or use Delete All Room Data below, and is permanently deleted within two months of deletion (section 3 ⑤). Contact emails follow section 11.</p>
   <div class="scroll">
   <table>
     <tr><th>What</th><th>How</th></tr>
-    <tr><td>All records in the app</td><td>Me › Data › <strong>Delete All Records</strong> — trips, cities, stickers, vlogs, widget copies, scheduled notifications, ticket images received from friends, and the list of people you hid. From version 1.3.2, also places you marked "Not Home" or added as home, and notifications you already received. Settings such as your home area radius, photos you saved to your library, and <strong>friends groups and posted tickets in iCloud</strong> remain</td></tr>
-    <tr><td>Tickets you posted to a friends group</td><td>Tap "Shared with Friends" on the screen that opens when you tap a photo in the Globe tab and <strong>Take Down</strong>, or open the ticket in the Friends tab and <strong>Take Down</strong> — it is removed from the group right away</td></tr>
-    <tr><td>Friends group</td><td>Friends tab › top right › <strong>Leave Group</strong> (your tickets are taken down too). If you created the group, <strong>Delete Group</strong> (the group and its tickets are deleted for everyone in it)</td></tr>
+    <tr><td>All records in the app</td><td>Me › Data › <strong>Delete All Records</strong> — trips, cities, stickers, vlogs, widget copies, scheduled notifications, and the list of people you hid, and, if you are in friend rooms, <strong>Delete All Room Data</strong> as well. From version 1.3.2, also places you marked "Not Home" or added as home, and notifications you already received. Settings such as your home area radius and photos you saved to your library remain</td></tr>
+    <tr><td>Photos you posted to a friend room</td><td>Open the photo in the room and <strong>Take Down</strong> — it is deleted from the server right away</td></tr>
+    <tr><td>Friend room</td><td>Room › top right › <strong>Leave Room</strong> (the photos you posted are deleted too)</td></tr>
+    <tr><td>All friend room records</td><td>Friends tab › top right › <strong>Delete All Room Data</strong> — leaves every room, deletes your posted photos and this device's anonymous number from the server, and deletes the room keys and received photos on this device</td></tr>
     <tr><td>Your iCloud backup</td><td>Settings › Apple Account › iCloud › Manage Account Storage › Moondeuk › <strong>Delete Data</strong></td></tr>
     <tr><td>Photo access</td><td>Settings › Apps › Moondeuk › Photos</td></tr>
     <tr><td>Notifications</td><td>Settings › Apps › Moondeuk › Notifications</td></tr>
@@ -229,16 +246,17 @@
     <tr><td>Contact emails</td><td>Section 11</td></tr>
   </table>
   </div>
-  <p><strong>Deleting the app also deletes the data on the device.</strong> Your iCloud backup and friends groups must be deleted separately as above.</p>
-  <p><strong>Once deleted, the app's records are not kept on the developer's side.</strong> A Moondeuk backup copy exists only in your own iCloud, so you can delete it as above.
+  <p><strong>Deleting the app also deletes the data on the device.</strong> Your iCloud backup must be deleted separately as above. <strong>Photos on the friend room server remain even if you delete the app,</strong>
+     so please use Delete All Room Data before deleting the app. If you already deleted it, let us know at the email in section 11 and we will help (the server does not know who you are, so we need to find this device's anonymous number together).</p>
+  <p><strong>Once deleted, travel records are not kept on the developer's side.</strong> A Moondeuk backup copy exists only in your own iCloud, so you can delete it as above.
      Copies in an iPhone device backup (section 2) disappear when that backup is deleted or replaced by a newer one.</p>
 
   <h2>9. Permissions</h2>
   <div class="scroll">
   <table>
     <tr><th>Permission</th><th>Used for</th></tr>
-    <tr><td>Photos</td><td>Reading the capture metadata of photos in your library, reading photos and videos for vlogs, and saving new ticket images, Filter Photos, and vlogs. <strong>Allowing only selected photos works too.</strong>
-        Originals are never changed or deleted</td></tr>
+    <tr><td>Photos</td><td>Reading the capture metadata of photos in your library, reading photos and videos for vlogs and friend rooms, and saving new ticket images, Filter Photos, vlogs, and friend room photos. <strong>Allowing only selected photos works too.</strong>
+        Originals are never changed or deleted. Browse Your Library in friend rooms uses the iOS photo picker, so even photos you have not allowed are passed to the app <strong>only if you pick them in that picker</strong></td></tr>
     <tr><td>Add Photos</td><td>Asked only if you save a ticket image, Filter Photo, or vlog without having allowed photo access. It only adds new items and does not read your library</td></tr>
     <tr><td>Notifications</td><td>On This Day notifications. <strong>Optional</strong></td></tr>
     <tr><td>Face ID</td><td>Opening locked trips (section 6)</td></tr>
@@ -247,9 +265,9 @@
   <p><strong>Permissions Moondeuk never asks for:</strong> location, camera (used briefly in version 1.3.7 and since removed), microphone, contacts, Media &amp; Apple Music (from version 1.2.0), and app tracking.</p>
 
   <h2>10. Children's privacy</h2>
-  <p>Anyone can use Moondeuk, with no age limit (App Store age rating: 4+). The app's records stay on the device and do not reach the developer.</p>
+  <p>Anyone can use Moondeuk, with no age limit (App Store age rating: 4+). Travel records stay on the device and do not reach the developer.</p>
   <p>The developer <strong>does not knowingly collect personal information from children under 14.</strong> If you are under 14, please contact us together with a parent or guardian.</p>
-  <p>Friends groups include the spot where each photo was taken (section 3 ⑤). <strong>If you are under 14, please use friends groups together with a parent or guardian.</strong></p>
+  <p>In friend rooms, the photos and captions you pick are seen by the people in the room (section 3 ⑤). <strong>If you are under 14, please use friend rooms together with a parent or guardian.</strong></p>
 
   <h2>11. Information received when you contact us</h2>
   <p>If you don't contact us, the developer receives no information about you.</p>
@@ -266,7 +284,7 @@
 
   <h2>12. Your rights</h2>
   <ul>
-    <li><strong>The app's records</strong> can be viewed, changed, and deleted by you directly in the app (section 8)</li>
+    <li><strong>The app's records and the photos you posted to friend rooms</strong> can be viewed and deleted by you directly in the app (section 8). The developer cannot open the locked contents of friend rooms, so viewing or correcting them is also possible only in the app</li>
     <li><strong>For contact information the developer holds</strong>, you can ask by email to access, correct, or delete it, or to stop processing it. We answer <strong>within 10 days</strong> of receiving your request</li>
     <li>We confirm it's you by corresponding with the email address you contacted us from. We do not ask for ID</li>
     <li>If the law requires us to keep a record, we tell you why and delete it when the period ends</li>
@@ -275,6 +293,9 @@
   <h2>13. How your information is protected</h2>
   <ul>
     <li>The app's records are kept in the private storage iOS gives each app</li>
+    <li>Photos, captions, names, and capture times in friend rooms are <strong>locked on this device with the room key (AES-256-GCM)</strong> before they are sent, and the key is never sent to the server. The server keeps only a hash of the value
+        that decides who can enter a room, and only a hash of each device's secret value. Room keys and the device secret are kept in the iOS Keychain (this device only)</li>
+    <li>The app talks to the server only over HTTPS (TLS 1.2 or later). The server's storage cannot be opened directly from outside, and accidental deletions can be recovered for a while (everything is permanently deleted within two months)</li>
     <li>Moondeuk contains no advertising, analytics, or other third-party SDKs</li>
     <li>Locked trips open only with device authentication (section 6)</li>
     <li>The contact email account is protected with two-step verification</li>
