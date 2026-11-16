@@ -2,12 +2,14 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!--
   문득 친구 방 초대 페이지(2026-11-14). 앱이 보내는 초대 링크가 이 주소다 — https://hanseokoh979-bit.github.io/moondeuk-site/room.html#<방 번호>.<방 열쇠>
   카카오톡 · 메시지에서 웹 주소는 눌리는데 앱 주소(moondeuk://)는 안 눌려서 둔다. # 뒤(방 열쇠)는 브라우저가 서버로 보내지 않는다 — 이 페이지는 그것을
-  브라우저 안에서 읽어 「문득에서 열기」 단추를 moondeuk://room/<방 번호>#<방 열쇠> 로 만들 뿐이다. 밖에서 불러오는 스크립트 · 분석 도구 · 쿠키가 없다(그래야 열쇠가 새지 않는다).
-  저절로 앱으로 넘기지 않는다 — 앱이 없으면 Safari 가 「주소가 유효하지 않음」 창을 띄운다. 친구 방이 앱스토어 판에서 열리면 TEST_ONLY 를 false 로.
+  브라우저 안에서 읽어 「문득에서 열기」 단추를 moondeuk://room/<방 번호>#<방 열쇠> 로 만들 뿐이다. 밖에서 불러오는 스크립트 · 분석 도구 · 쿠키 · 글꼴이 없다(그래야 열쇠가 새지 않는다).
+  저절로 앱으로 넘기지 않는다 — 앱이 없으면 Safari 가 「주소가 유효하지 않음」 창을 띄운다.
+  2026-11-16 생김새를 「폴더」로 — 앱 친구 탭의 방 카드처럼 사진 셋이 삐져나온 폴더 · 가운데 제목 · 아래 두 단추(세 시안 중 사용자가 고름).
+  사진 room-1 ~ 3.jpg 는 운영자의 여행 사진을 줄여 위치 · 기기 정보 없이 다시 저장한 것. 친구 방이 다시 시험판에서만 열리면 TEST_ONLY 를 true 로.
 -->
 <meta name="robots" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
@@ -17,76 +19,111 @@
 <meta property="og:description" content="같이 여행 간 친구가 초대했어요. 그 여행에서 마음에 든 사진을 서로 채워요.">
 <meta property="og:image" content="https://hanseokoh979-bit.github.io/moondeuk-site/room-og.png">
 <meta property="og:type" content="website">
-<link rel="stylesheet" href="style.css">
 <style>
-  .open { font-size: 1.05rem; padding: 0.9rem 1.6rem; margin-top: 1.25rem; }
-  .open[hidden], #bad[hidden], #good[hidden] { display: none; }
-  .icon { width: 72px; height: 72px; border-radius: 16px; display: block; margin: 2.5rem 0 0; }
-  .icon + h1 { margin-top: 1.25rem; }
-  .small { font-size: 0.9rem; color: var(--text-3); }
+  :root { color-scheme: light dark; --bg: #fff; --surface: #f2f2f7; --text: #111214; --text-2: #6b6f76; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #000; --surface: #1c1c1e; --text: #f5f5f7; --text-2: #9a9aa0; } }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  html:lang(ko) body { word-break: keep-all; overflow-wrap: break-word; } /* 한국어는 낱말 가운데서 줄을 안 바꾼다 — 일본어는 띄어쓰기가 없어 빼 둔다 */
+  body { margin: 0; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Hiragino Sans", "Segoe UI", "Malgun Gothic", sans-serif; }
+  .wrap { max-width: 26rem; min-height: 100vh; min-height: 100svh; margin: 0 auto; display: flex; flex-direction: column;
+    padding: calc(3rem + env(safe-area-inset-top)) 1.25rem calc(1.75rem + env(safe-area-inset-bottom)); }
+
+  /* 폴더 — 앱 친구 탭의 방 카드처럼: 뒤판 · 탭 · 삐져나온 사진 셋 · 반투명 앞판 */
+  .folder { position: relative; width: 15.5rem; height: 13rem; margin: 0 auto; flex: none; }
+  .tab { position: absolute; left: 0; top: 0; width: 6.4rem; height: 2.2rem; border-radius: 1rem 1rem 0 0; background: #7aa6c2; }
+  .back { position: absolute; inset: 1.1rem 0 0; border-radius: 1.4rem; background: linear-gradient(160deg, #7aa6c2, #4f7d98); }
+  .ph { position: absolute; width: 7.4rem; height: 9rem; border-radius: .9rem; border: 3px solid #fff;
+    background: #d9dde3 center / cover no-repeat; box-shadow: 0 6px 18px rgba(0, 0, 0, .18); }
+  .p1 { left: 1.6rem; top: 1.6rem; transform: rotate(-9deg); background-image: url(room-1.jpg); }
+  .p2 { left: 4.1rem; top: .9rem; transform: rotate(1deg); background-image: url(room-2.jpg); z-index: 2; }
+  .p3 { right: 1.5rem; top: 1.7rem; transform: rotate(9deg); background-image: url(room-3.jpg); }
+  .front { position: absolute; left: 0; right: 0; bottom: 0; height: 6.4rem; border-radius: 1.4rem; z-index: 3; padding: 1rem 1.1rem;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    background: rgba(255, 255, 255, .55); border: 1px solid rgba(255, 255, 255, .6);
+    -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4); }
+  @media (prefers-color-scheme: dark) { .front { background: rgba(40, 40, 44, .55); border-color: rgba(255, 255, 255, .12); } }
+  .front b { font-size: 1.05rem; letter-spacing: -.02em; }
+  .front span { font-size: .78rem; color: var(--text-2); }
+
+  h1 { font-size: 1.85rem; line-height: 1.3; letter-spacing: -.035em; margin: 2.2rem 0 .6rem; text-align: center; text-wrap: balance; }
+  .lead, #bad { font-size: 1rem; line-height: 1.6; color: var(--text-2); text-align: center; margin: 0 .5rem; text-wrap: pretty; }
+  .cta { margin-top: auto; padding-top: 2rem; display: flex; flex-direction: column; gap: .65rem; }
+  .btn { display: block; text-align: center; text-decoration: none; font-weight: 600; font-size: 1.06rem; padding: 1rem; border-radius: 999px; }
+  .primary { background: var(--text); color: var(--bg); }
+  .secondary { background: var(--surface); color: var(--text); }
+  .btn[hidden], #bad[hidden], .lead[hidden] { display: none; }
+  .fine { font-size: .8rem; line-height: 1.55; color: var(--text-2); text-align: center; margin: .9rem .5rem 0; text-wrap: pretty; }
+  .fine b { color: var(--text); font-weight: 600; }
+  .foot { font-size: .72rem; line-height: 1.6; color: var(--text-2); text-align: center; margin: 1.4rem .5rem 0; text-wrap: pretty; }
+  .foot a { color: inherit; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <a class="mark" href="./"><span class="b">[</span>문득<span class="c">]</span></a>
-
-  <img class="icon" src="room-og.png" alt="" width="72" height="72">
-  <h1 id="title">문득 친구 방에 초대받았어요</h1>
-
-  <div id="good">
-    <p id="lead">같이 여행 간 친구가 그 여행에서 마음에 든 사진을 서로 채우는 방에 초대했어요.</p>
-    <a class="store open" id="open" href="#" hidden>문득에서 열기</a>
+  <div class="folder" aria-hidden="true">
+    <div class="tab"></div><div class="back"></div>
+    <div class="ph p1"></div><div class="ph p2"></div><div class="ph p3"></div>
+    <div class="front"><b id="folder">친구 방</b><span id="folderSub">같이 간 여행의 사진을 서로 채워요</span></div>
   </div>
+
+  <h1 id="title">친구 방에<br>초대받았어요</h1>
+  <p class="lead" id="lead">같이 여행 간 친구가 그 여행에서 마음에 든 사진을 서로 채우는 방에 초대했어요.</p>
   <p id="bad" hidden>초대 링크가 잘못됐어요. 친구에게 링크를 다시 받아 주세요.</p>
 
-  <div class="card">
-    <p id="noapp"><strong>문득이 없나요?</strong> <a href="https://apps.apple.com/app/id6821060159">App Store에서 받은 뒤</a> 이 링크를 다시 눌러 주세요.</p>
-    <p id="kakao"><strong>카카오톡에서 단추가 안 눌리면</strong> 화면의 ⋯ 메뉴에서 「Safari로 열기」를 누른 뒤 다시 눌러 주세요.</p>
+  <div class="cta">
+    <a class="btn primary" id="open" href="#" hidden>문득에서 열기</a>
+    <a class="btn secondary" id="store" href="https://apps.apple.com/app/id6821060159">App Store에서 문득 받기</a>
+    <p class="fine" id="noapp">문득을 받은 뒤 이 링크를 다시 눌러 주세요.</p>
+    <p class="fine" id="kakao"><b>카카오톡에서 안 열리면</b> 화면의 ⋯ 메뉴에서 「Safari로 열기」를 누른 뒤 다시 눌러 주세요.</p>
   </div>
 
-  <p class="small" id="note">초대 열쇠는 주소의 # 뒤에만 있어 이 페이지의 서버로 가지 않아요. 링크를 가진 사람은 누구나 방에 들어올 수 있으니 같이 간 사람에게만 보내 주세요.</p>
-
-  <footer><span class="meta">문득 · Moondeuk · 운영 여울 · <a href="privacy-ios.html" id="privacy">개인정보처리방침</a></span></footer>
+  <p class="foot"><span id="note">초대 열쇠는 주소의 # 뒤에만 있어 이 페이지의 서버로 가지 않아요. 링크를 가진 사람은 누구나 방에 들어올 수 있으니 같이 간 사람에게만 보내 주세요.</span><br>
+    <span id="credit">문득 · 운영 여울</span> · <a href="privacy-ios.html" id="privacy">개인정보처리방침</a></p>
 
 </div>
 <script>
 (function () {
-  var TEST_ONLY = false; // 2026-11-16 — 친구 방이 앱스토어 판(1.5.2)에서도 열려 「문득이 없나요?」를 App Store 로(시험판에서만 열 때는 true)
+  var TEST_ONLY = false; // 2026-11-16 — 친구 방이 앱스토어 판(1.5.2)에서도 열린다. 시험판에서만 열 때는 true(App Store 단추를 숨기고 TestFlight 안내로)
 
   var text = {
     ko: {
-      title: "문득 친구 방에 초대받았어요",
+      doc: "문득 친구 방 초대", folder: "친구 방", folderSub: "같이 간 여행의 사진을 서로 채워요",
+      title: "친구 방에<br>초대받았어요",
       lead: "같이 여행 간 친구가 그 여행에서 마음에 든 사진을 서로 채우는 방에 초대했어요.",
-      open: "문득에서 열기",
+      open: "문득에서 열기", store: "App Store에서 문득 받기",
+      noapp: "문득을 받은 뒤 이 링크를 다시 눌러 주세요.",
+      noappTest: "친구 방은 지금 시험판에서만 열려 있어요. 초대한 친구에게 TestFlight 시험판 초대를 부탁해 주세요.",
       bad: "초대 링크가 잘못됐어요. 친구에게 링크를 다시 받아 주세요.",
-      noapp: "<strong>문득이 없나요?</strong> 친구 방은 지금 시험판에서만 열려 있어요. 초대한 친구에게 TestFlight 시험판 초대를 부탁해 주세요.",
-      noappStore: "<strong>문득이 없나요?</strong> <a href=\"https://apps.apple.com/app/id6821060159\">App Store에서 받은 뒤</a> 이 링크를 다시 눌러 주세요.",
-      kakao: "<strong>카카오톡에서 단추가 안 눌리면</strong> 화면의 ⋯ 메뉴에서 「Safari로 열기」를 누른 뒤 다시 눌러 주세요.",
+      kakao: "<b>카카오톡에서 안 열리면</b> 화면의 ⋯ 메뉴에서 「Safari로 열기」를 누른 뒤 다시 눌러 주세요.",
       note: "초대 열쇠는 주소의 # 뒤에만 있어 이 페이지의 서버로 가지 않아요. 링크를 가진 사람은 누구나 방에 들어올 수 있으니 같이 간 사람에게만 보내 주세요.",
-      privacy: "개인정보처리방침", privacyHref: "privacy-ios.html", doc: "문득 친구 방 초대"
+      credit: "문득 · 운영 여울", privacy: "개인정보처리방침", privacyHref: "privacy-ios.html"
     },
     en: {
-      title: "You're invited to a Moondeuk friend room",
+      doc: "Moondeuk friend room invite", folder: "Friend Room", folderSub: "Photos from your trip together",
+      title: "You're invited to<br>a friend room",
       lead: "A friend you traveled with invited you to a room where you add the photos you liked from that trip for each other.",
-      open: "Open in Moondeuk",
+      open: "Open in Moondeuk", store: "Get Moondeuk on the App Store",
+      noapp: "After you get Moondeuk, tap this link again.",
+      noappTest: "Friend rooms are currently open only in the test version. Ask the friend who invited you to invite you to the TestFlight test version.",
       bad: "This invite link isn't valid. Please ask your friend to send it again.",
-      noapp: "<strong>Don't have Moondeuk?</strong> Friend rooms are currently open only in the test version. Ask the friend who invited you to invite you to the TestFlight test version.",
-      noappStore: "<strong>Don't have Moondeuk?</strong> <a href=\"https://apps.apple.com/app/id6821060159\">Get it on the App Store</a>, then tap this link again.",
-      kakao: "<strong>If the button doesn't work in KakaoTalk,</strong> tap Open in Safari in the ⋯ menu, then tap it again.",
+      kakao: "<b>If it doesn't open in KakaoTalk,</b> tap Open in Safari in the ⋯ menu, then tap the button again.",
       note: "The invite key is only in the part of the address after #, so it is never sent to this page's server. Anyone with the link can join the room, so please send it only to the people you traveled with.",
-      privacy: "Privacy Policy", privacyHref: "privacy-ios-en.html", doc: "Moondeuk friend room invite"
+      credit: "Moondeuk · by YEOUL", privacy: "Privacy Policy", privacyHref: "privacy-ios-en.html"
     },
     ja: {
-      title: "Moondeuk 友だちのルームに招待されました",
+      doc: "Moondeuk 友だちのルームへの招待", folder: "友だちのルーム", folderSub: "一緒に行った旅の写真を集めましょう",
+      title: "友だちのルームに<br>招待されました",
       lead: "一緒に旅をした友だちが、その旅で気に入った写真をお互いに追加するルームに招待しました。",
-      open: "Moondeukで開く",
+      open: "Moondeukで開く", store: "App StoreでMoondeukを入手",
+      noapp: "Moondeukを入手してから、このリンクをもう一度タップしてください。",
+      noappTest: "友だちのルームは、いまはテスト版でだけ開いています。招待した友だちに、TestFlightのテスト版への招待を頼んでください。",
       bad: "招待リンクが正しくありません。友だちにリンクをもう一度送ってもらってください。",
-      noapp: "<strong>Moondeukをお持ちでないですか？</strong>友だちのルームは、いまはテスト版でだけ開いています。招待した友だちに、TestFlightのテスト版への招待を頼んでください。",
-      noappStore: "<strong>Moondeukをお持ちでないですか？</strong><a href=\"https://apps.apple.com/app/id6821060159\">App Storeで入手</a>してから、このリンクをもう一度タップしてください。",
-      kakao: "<strong>カカオトークでボタンが押せないときは</strong>、画面の⋯メニューで「Safariで開く」をタップしてから、もう一度タップしてください。",
+      kakao: "<b>カカオトークで開かないときは</b>、画面の⋯メニューで「Safariで開く」をタップしてから、もう一度タップしてください。",
       note: "招待の鍵はアドレスの#のあとにだけあり、このページのサーバーには送られません。リンクを持っている人は誰でもルームに入れるので、一緒に旅をした人にだけ送ってください。",
-      privacy: "プライバシーポリシー", privacyHref: "privacy-ios-ja.html", doc: "Moondeuk 友だちのルームへの招待"
+      credit: "Moondeuk · 運営 YEOUL", privacy: "プライバシーポリシー", privacyHref: "privacy-ios-ja.html"
     }
   };
 
@@ -95,13 +132,18 @@
   document.documentElement.lang = t === text.ko ? "ko" : t === text.ja ? "ja" : "en";
   document.title = t.doc;
   function set(id, html) { document.getElementById(id).innerHTML = html; }
+  set("folder", t.folder);
+  set("folderSub", t.folderSub);
   set("title", t.title);
   set("lead", t.lead);
   set("open", t.open);
+  set("store", t.store);
+  set("noapp", TEST_ONLY ? t.noappTest : t.noapp);
   set("bad", t.bad);
-  set("noapp", TEST_ONLY ? t.noapp : t.noappStore);
   set("kakao", t.kakao);
   set("note", t.note);
+  set("credit", t.credit);
+  if (TEST_ONLY) document.getElementById("store").hidden = true;
   var privacy = document.getElementById("privacy");
   privacy.textContent = t.privacy;
   privacy.href = t.privacyHref;
@@ -113,7 +155,7 @@
     open.href = "moondeuk://room/" + m[1] + "#" + m[2];
     open.hidden = false;
   } else {
-    document.getElementById("good").hidden = true;
+    document.getElementById("lead").hidden = true;
     document.getElementById("bad").hidden = false;
   }
 })();
